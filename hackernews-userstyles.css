@@ -47,6 +47,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+/* i really want this to be global */
+
 /* reset */
 body, td, table, input, textarea, .pagetop, * {
   font-family: "Lato";
@@ -57,6 +59,11 @@ body, td, table, input, textarea, .pagetop, * {
 body {
   background: #f0f0f0;
   margin: 0;
+}
+
+a, .comment {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .pagetop,
@@ -127,7 +134,7 @@ table {
 #hnmain > tbody > tr > td[bgcolor] > table > tbody > tr > td:last-child {
   position: absolute;
   right: 0;
-  top: 15px;
+  top: 13px;
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a {
@@ -168,9 +175,15 @@ table {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   #hnmain > tbody > tr > td[bgcolor] > table tbody tr td .pagetop .hnname {
     margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 750px) and (min-width: 300px) {
+  span.pagetop b {
+    display: initial;
   }
 }
 
@@ -216,6 +229,23 @@ table {
   border-radius: 100%;
   font-size: 8px;
   -webkit-transition: all 0.15s;
+  margin-top: 0;
+  margin-top: 7px;
+}
+
+.itemlist .votearrow:after {
+  content: "▲";
+  display: block;
+  background: #F06D3C;
+  color: #fff;
+  text-align: center;
+  width: 14px;
+  height: 14px;
+  line-height: 13px;
+  border-radius: 100%;
+  font-size: 8px;
+  -webkit-transition: all 0.15s;
+  margin-top: 0;
 }
 
 .votearrow:hover:after {
@@ -235,7 +265,7 @@ table {
   padding: 25px 0 4px;
 }
 
-.athing .title {
+.itemlist .athing .title {
   width: 20px;
 }
 
@@ -246,7 +276,7 @@ table {
   line-height: 1.5;
 }
 
-.athing .title .rank {
+.itemlist .athing .title .rank {
   text-align: center;
   width: 30px;
   height: 30px;
@@ -261,6 +291,10 @@ table {
   position: absolute;
   top: 25px;
   left: 0;
+}
+
+.athing .title .rank {
+  display: none;
 }
 
 .athing .title .comhead {
@@ -295,18 +329,41 @@ table {
 
 #hnmain table {
   width: 100%;
+  padding: 50px 100px 0;
+}
+
+#hnmain table.itemlist {
   padding: 50px 250px 0;
 }
 
+#hnmain .comment-tree {
+  padding: 0 150px;
+}
+
+#hnmain .comment-tree table {
+  padding: 0;
+}
+
+#hnmain .comment-tree .athing td {
+  padding: 10px 0;
+}
+
 @media screen and (max-width: 1080px) {
-  #hnmain table {
+  #hnmain table, #hnmain table.itemlist {
     padding: 50px 50px 0;
+  }
+
+  #hnmain .comment-tree {
+    padding: 0 100px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #hnmain table {
+  #hnmain table, #hnmain table.itemlist {
     padding: 50px 20px 0;
+  }
+  #hnmain .comment-tree {
+    padding: 0 50px;
   }
 }
 
