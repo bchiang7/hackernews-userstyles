@@ -55,13 +55,25 @@ body, td, table, input, textarea, .pagetop, * {
 }
 
 body {
-  background: #fafafa;
+  background: #f0f0f0;
   margin: 0;
 }
 
 .pagetop,
 .pagetop a {
-  color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .pagetop a {
+    margin-right: 3px;
+  }
+}
+
+.pagetop a:visited {
+  color: #fff;
 }
 
 .brandname {
@@ -73,12 +85,16 @@ table {
 }
 
 #hnmain {
-  width: 800px;
+  width: 100%;
   background: transparent;
 }
 
 #hnmain > tbody > tr:last-child img {
   display: none;
+}
+
+#hnmain > tbody > tr:last-child form {
+  margin-bottom: 50px;
 }
 
 #hnmain > tbody > tr:last-child table td {
@@ -90,12 +106,28 @@ table {
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table {
-  padding: 0 0 20px 0 !important;
+  padding: 0 !important;
+  text-transform: capitalize;
+}
+
+#hnmain > tbody > tr > td[bgcolor] > table > tbody {
+  background: #F06D3C;
+  box-shadow: 0 7px 7px -3px rgba(0,0,0,0.1);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table > tbody > tr > td {
   font-family: "Lato";
   font-weight: 400;
+}
+
+
+#hnmain > tbody > tr > td[bgcolor] > table > tbody > tr > td:last-child {
+  position: absolute;
+  right: 0;
+  top: 15px;
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a {
@@ -108,18 +140,15 @@ table {
   text-align: center;
 }
 
-#hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a:after {
-  content: "HN";
-  font-weight: 700;
-  font-family: "Lato";
-}
-
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a img {
-  display: none;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 14px;
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:nth-child(2) .pagetop {
-  color: #fafafa;
+  color: #F06D3C;
   padding-left: 10px;
   font-size: 14px;
 }
@@ -129,8 +158,20 @@ table {
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td .pagetop a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
   padding-bottom: 2px;
+}
+
+#hnmain > tbody > tr > td[bgcolor] > table tbody tr td .pagetop .hnname {
+  margin-right: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 750px) {
+  #hnmain > tbody > tr > td[bgcolor] > table tbody tr td .pagetop .hnname {
+    margin-bottom: 5px;
+  }
 }
 
 .spacer {
@@ -182,16 +223,16 @@ table {
 }
 
 .athing + tr .subtext {
-    position: relative;
+  position: relative;
 }
 
 .athing + tr .subtext {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 25px;
 }
 
 .athing td {
-  padding: 16px 0 4px;
+  padding: 25px 0 4px;
 }
 
 .athing .title {
@@ -201,7 +242,8 @@ table {
 .athing .title a:link,
 .athing .title a:visited {
   color: rgba(0, 0, 0, 0.9);
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 .athing .title .rank {
@@ -217,7 +259,7 @@ table {
   font-size: 12px;
   color: #555;
   position: absolute;
-  top: 16px;
+  top: 25px;
   left: 0;
 }
 
@@ -226,33 +268,46 @@ table {
 }
 
 .subtext {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .subtext a:link,
 .subtext a:visited {
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .subtext a:hover {
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   padding-bottom: 2px;
 }
 
 .comment-tree .default .comhead {
   font-size: 14px !important;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.7);
 }
 
 .comment-tree .comment {
   font-size: 14px !important;
-  color: rgba(0,0,0,0.5);
-  line-height: 1.42em;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.5;
 }
 
 #hnmain table {
   width: 100%;
+  padding: 50px 250px 0;
+}
+
+@media screen and (max-width: 1080px) {
+  #hnmain table {
+    padding: 50px 50px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #hnmain table {
+    padding: 50px 20px 0;
+  }
 }
 
 #hnmain form textarea {
@@ -275,6 +330,13 @@ table {
   padding: 0 12px;
   color: #F06D3C;
   cursor: pointer;
+  transition: all 0.3 ease;
+  text-transform: capitalize;
+}
+
+#hnmain form input[type=submit]:hover {
+  background: #F06D3C;
+  color: #fff;
 }
 
 .itemlist tr:last-child .title {
@@ -282,12 +344,23 @@ table {
 }
 
 .itemlist tr:last-child .title a {
-  border: solid 1px #F06D3C;
+  border: 2px solid #F06D3C;
   height: 32px;
   line-height: 32px;
   background: transparent;
   border-radius: 32px;
-  padding: 0 12px;
+  padding: 3px 20px;
+  font-weight: 700;
   color: #F06D3C;
   display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.itemlist tr:last-child .title a:hover {
+  background: #F06D3C;
+  color: #fff;
+}
+
+.yclinks {
+  font-size: 14px;
 }
