@@ -79,6 +79,12 @@ a, .comment {
   }
 }
 
+@media screen and (max-width: 620px) {
+  .pagetop a {
+    font-size: 14px;
+  }
+}
+
 .pagetop a:visited {
   color: #fff;
 }
@@ -134,7 +140,7 @@ table {
 #hnmain > tbody > tr > td[bgcolor] > table > tbody > tr > td:last-child {
   position: absolute;
   right: 0;
-  top: 13px;
+  top: 10px;
 }
 
 #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a {
@@ -316,6 +322,37 @@ table {
   padding-bottom: 2px;
 }
 
+@media only screen and (max-width: 600px) {
+  #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:first-child a {
+    height: 60px;
+  }
+
+  #hnmain > tbody > tr > td[bgcolor] > table tbody tr td .pagetop .hnname {
+    margin-bottom: 0;
+  }
+
+  #hnmain > tbody > tr > td[bgcolor] > table > tbody > tr > td:last-child {
+    right: 5px;
+    top: 5px;
+  }
+
+  #hnmain > tbody > tr > td[bgcolor] > table tbody tr td:nth-child(2) .pagetop {
+    padding-left: 0;
+  }
+
+  span.pagetop b {
+    display: block;
+  }
+
+  .pagetop a {
+    margin: 0;
+  }
+
+  .itemlist .athing .title {
+    width: 25px;
+  }
+}
+
 .comment-tree .default .comhead {
   font-size: 14px !important;
   color: rgba(0,0,0,0.7);
@@ -358,7 +395,7 @@ table {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   #hnmain table, #hnmain table.itemlist {
     padding: 50px 20px 0;
   }
